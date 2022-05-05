@@ -151,5 +151,4 @@ if __name__ == '__main__':
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')
 
     args = parser.parse_args()
-    print(args.qkv_bias)
     train(args)

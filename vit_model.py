@@ -5,7 +5,7 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 
-class PatchEmbed:
+class PatchEmbed(nn.Module):
     # 将2维图像转化为patch编码
     # 224x224x3-->((224/16)^2)x(16x16x3)-->196x768  
     def __init__(self, 
@@ -221,6 +221,7 @@ class VisionTransformer(nn.Module):
             for _ in range(depth)
         ])
 
+        self.norm = norm_layer(embed_dim)
         # 预表征层
         if representation_size:
             self.has_logits = True
@@ -250,7 +251,7 @@ class VisionTransformer(nn.Module):
         x = self.pos_drop(x + self.pos_embed)
         x = self.blocks(x)
         x = self.norm(x)
-        self.pre_logits(x[:, 0])
+        x = self.pre_logits(x[:, 0])
 
         x = self.head(x)
         return x
@@ -263,5 +264,5 @@ if __name__ == '__main__':
                               depth=12,
                               num_heads=12,
                               representation_size=None,
-                              num_classes=100)
+                              num_classes=5)
     print(model)

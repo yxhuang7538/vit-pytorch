@@ -16,12 +16,15 @@
 实验训练了一个五分类的水果数据集，结果如下：
 
 训练结果
+
 ![训练结果](./display/train_res.png)
 
 测试输出
+
 ![测试结果](./display/test.png)
 
 测试图片
+
 ![测试图片](./test_result.png)
 
 ## 参考

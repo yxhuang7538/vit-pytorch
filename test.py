@@ -86,7 +86,7 @@ if __name__ == '__main__':
     parser.add_argument('--drop_ratio', type=float, default=0., help="除attention层外其余层的丢弃概率")
     parser.add_argument('--attn_drop_ratio', type=float, default=0., help="attention层中的丢弃概率")
 
-    parser.add_argument('--img_path', type=str, default="datasets/test/test.jpg", help="测试图片路径")
+    parser.add_argument('--img_path', type=str, default="../test.jpg", help="测试图片路径")
     parser.add_argument('--model_path', type=str, default="weights/model-9.pth")
     args = parser.parse_args()
     test()

@@ -132,7 +132,7 @@ class Attention(nn.Module):
 
 class MlP(nn.Module):
     """
-    MLP as used in Vision Transformer, MLP-Mixer and related networks
+    MLP结构
     """
     def __init__(self, 
                  in_features, 
@@ -192,7 +192,6 @@ class VisionTransformer(nn.Module):
         representation_size : 如果设置则将启用并设置pre-logits层为此值（预先表征）
         drop_ratio : dropout 概率
         attn_drop_ratio : 注意力层的dropout概率
-        drop_path_ratio : 随机丢弃概率
         embed_layer : patch的编码层，将patch映射到一维空间中
         '''
         super(VisionTransformer, self).__init__()

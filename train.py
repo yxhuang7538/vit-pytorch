@@ -143,7 +143,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--lrf', type=float, default=0.01)
-    parser.add_argument('--data-path', type=str, default="datasets/fruits", help="数据集位置")
+    parser.add_argument('--data-path', type=str, default="../fruits", help="数据集位置")
     parser.add_argument('--model-name', default='', help="模型名字")
     parser.add_argument('--weights', type=str, default='weights/jx_vit_base_patch16_224_in21k-e5005f0a.pth',
                         help='初始化权重路径')
